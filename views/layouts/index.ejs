@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+</head>
+<body>
+    <div class="header">
+        <h2>Tic Tac Toe</h2>
+    </div>
+    {{gameboard}} 
+    <div class="options-modal" type="modal">
+        <form action="">
+            <fieldset>
+                <p class="welcome">Welcome to my Tic Tac Toe project. Enter your name and choose a marker to begin.</p>
+                <label for="name"> Name: 
+                    <input type="text" id="name" name="name" placeholder="John Smith" maxlength="15ch"/>
+                </label>
+                <label for="mark"> Marker: 
+                    <select name="mark" id="mark">
+                        <option value="">--Choose a marker--</option>
+                        <option value="X">X</option>
+                        <option value="O">O</option>
+                    </select>
+                </label>
+            </fieldset>
+            <fieldset>
+                <label for="difficulty">
+                    <select type="radio" name="difficulty" id="difficulty">
+                        <option value="">--Choose a difficulty--</option>
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                </label>
+            </fieldset>
+            <fieldset>
+                <label for="start">
+                    <input type="submit" id="start" name="start" value="Start Game" onclick=>
+                </label>
+        </form>
+
+    </div>   
+</body>
+</html>

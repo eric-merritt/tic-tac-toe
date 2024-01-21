@@ -1,0 +1,52 @@
+
+<style>
+    .gameboard {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 4px;
+        width: 300px;
+        height: 300px;
+        margin: 0 auto;
+        background-color: black;
+    }
+
+    .square {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        height: 100px;
+        font-size: 50px;
+        background-color: white;
+    }
+</style>
+<div class="gameboard">
+    <% board.forEach((element, index) => { %>
+        <div class="square" id="square<%= index %>"><%= element %></div>
+    <% }); %>
+
+    <script>
+
+        const getPlayerMark = (event) => {
+            return event.target.innerHTML;
+        };
+
+        const placeMark = (square, currentMark) => {
+            square.innerHTML = currentMark;
+        }
+        
+        const gameboard = document.querySelector('.gameboard');
+        const squares = document.querySelectorAll('.square');
+    
+        let currentMark = 'X';
+        
+        gameboard.addEventListener('click', (e) => {
+                if (e.target.innerHTML === "") {
+                    placeMark(e.target, currentMark);
+                    currentMark = currentMark === 'X' ? 'O' : 'X';
+                };      
+        });
+    </script>
+    
+</div>
